@@ -59,7 +59,7 @@ export default function login() {
           alert("Login Successfully !");
           navigate("/home");
         } else {
-          return setMsg("Invalid Email or Password!");
+          alert("Invalid Email or Password!");
         }
       });
     }
@@ -88,8 +88,8 @@ export default function login() {
         <Stack direction={{ xs: 'column', sm: 'column' }}
           spacing={{ xs: 1, sm: 2, md: 4 }}>
 
-          <Typography variant="h5" component="h2">
-            Login In
+          <Typography variant="h3" component="h2">
+            Log In
           </Typography>
 
 

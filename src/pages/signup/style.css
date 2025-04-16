@@ -10,7 +10,7 @@ a{
 
 .changeColor{
     background-color: #48415a;
-    color: white;
+    color: rgb(160, 160, 160);
 }
 
 .line-through{
@@ -23,6 +23,7 @@ a{
     gap: 2rem;
     flex-wrap: wrap;
 }
+
 
 @media screen and (max-width:600px){
     .form-class{

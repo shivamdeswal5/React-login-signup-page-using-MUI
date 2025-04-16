@@ -38,7 +38,7 @@ export default function signup() {
     e.preventDefault();
     if (data.name == "" && data.email == "" && data.password == "") {
       alert("Please all fields");
-      
+
     } else {
       const getData = JSON.parse(localStorage.getItem("user") || "[]");
       let arr = [];
@@ -53,21 +53,21 @@ export default function signup() {
   return (
     <>
       <Grid
-          container
-          spacing={{ xs: 2, md: 10}} columns={{ xs: 4, sm: 8, md: 12 }}
-          className = {`bg-color grid-container`}
-          direction="row"
-          
-          sx={{
-            justifyContent:"center",
-            alignItems: "center",
-            gap:"6rem",
-            height:"93.2vh",
-            gridTemplateColumns: 'repeat(2, 1fr)',
-          }}
-          
+        container
+        spacing={{ xs: 2, md: 10 }} columns={{ xs: 4, sm: 8, md: 12 }}
+        className={`bg-color grid-container`}
+        direction="row"
+
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "6rem",
+          height: "93.2vh",
+          gridTemplateColumns: 'repeat(2, 1fr)',
+        }}
+
       >
-        <Box display={{xs:'none', md:'none', sm:'none', lg:'block'}}>
+        <Box display={{ xs: 'none', md: 'none', sm: 'none', lg: 'block' }}>
           <img src={coverImg} alt="coverimg" />
         </Box>
 
@@ -78,20 +78,33 @@ export default function signup() {
             Create an Account
           </Typography>
 
-          <Box sx={{color:'gray'}}>
+          <Box sx={{ color: 'gray' }}>
             Already have an account? <a href='/login'>Log in</a>
           </Box>
 
 
-        <form className='form-class' onSubmit={handleSubmit}>
+          <form className='form-class' onSubmit={handleSubmit}>
 
-        <Stack className="signupName"
+            <Stack className="signupName"
               direction={{ xs: 'column', sm: 'row' }}
               spacing={{ xs: 1, sm: 2, md: 4 }}
             >
               <TextField id="filled-basic"
                 label="First Name"
-                sx={{ color: 'white' }}
+                sx={{
+                  "& .MuiFilledInput-root": {
+                    color: "white",
+                    "&:before": {            
+                    },
+                    "&:after": {
+                      borderColor: "white",
+                    },
+                  },
+
+                  "& .MuiInputLabel-filled": {
+                    color: "rgba(160, 160, 160, 0.842)",
+                  },
+                }}
                 variant="filled"
                 className='changeColor'
                 name="firstName"
@@ -100,9 +113,24 @@ export default function signup() {
 
               <TextField id="filled-basic" label="Last Name"
                 variant="filled"
+                sx={{
+                  "& .MuiFilledInput-root": {
+                    color: "white",
+                    "&:before": {            
+                    },
+                    "&:after": {
+                      borderColor: "white",
+                    },
+                  },
+
+                  "& .MuiInputLabel-filled": {
+                    color: "rgba(160, 160, 160, 0.842)",
+                  },
+                }}
                 name="lastName"
                 onChange={handleInput}
                 className='changeColor' />
+              
 
             </Stack>
 
@@ -114,11 +142,70 @@ export default function signup() {
               className='changeColor'
               name="email"
               onChange={handleInput}
-              sx={{ border: 'white' }}
+              sx={{
+                border: 'white',
+                // Root class for the input field
+                "& .MuiOutlinedInput-root": {
+                  color: "white",
+                  // Class for the border around the input field
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "",
+                  },
+                },
+                // Class for the label of the input field
+                "& .MuiInputLabel-outlined": {
+                  color: "rgba(160, 160, 160, 0.842)",
+                },
+
+                "&.Mui-focused": {
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "white",
+                    borderWidth: "3px",
+                  },
+                },
+
+                "& .MuiInputLabel-outlined": {
+                  color: "rgba(160, 160, 160, 0.842)",
+                  fontWeight: "",
+                  "&.Mui-focused": {
+                    color: "white",
+                    fontWeight: "bold",
+                    borderColor: "white",
+                  },
+                },
+
+                "&:hover:not(.Mui-focused)": {
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "white",
+                  },
+                },
+
+              }}
             />
 
             <TextField fullWidth label="Enter Password"
               id="fullWidth"
+              sx={{
+                "& .MuiInputLabel-outlined": {
+                  color: "rgba(160, 160, 160, 0.842)",
+                },
+                "& .MuiInputLabel-outlined": {
+                  color: "rgba(160, 160, 160, 0.842)",
+                  fontWeight: "",
+                  "&.Mui-focused": {
+                    color: "white",
+                    fontWeight: "bold",
+                    borderColor: "white",
+                  },
+                },
+
+                "&:hover:not(.Mui-focused)": {
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "white",
+                  }
+                },
+
+              }}
               name="password"
               onChange={handleInput}
               className='changeColor' />
@@ -135,7 +222,7 @@ export default function signup() {
               onSubmit={handleSubmit}
             > Create Account</Button>
 
-        </form>
+          </form>
 
           <Stack direction={{ xs: 'column', sm: 'column' }}
             spacing={{ xs: 1, sm: 2, md: 4 }}>
@@ -147,13 +234,20 @@ export default function signup() {
             </Divider>
 
             <Stack direction={{ xs: 'row', sm: 'row' }}
-              spacing={{ xs: 1, sm: 2, md: 4 }}>
+              spacing={{ xs: 1, sm: 2, md: 4 }}
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
 
-              <Button variant="outlined" startIcon={<GoogleIcon />}>
+              <Button variant="outlined"
+                startIcon={<GoogleIcon />}
+                sx={{ color: 'orange', border: '2px solid gray', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
+              >
                 Google
               </Button>
 
-              <Button variant="outlined" startIcon={<AppleIcon />}>
+              <Button variant="outlined"
+                sx={{ color: 'white', border: '2px solid gray', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
+                startIcon={<AppleIcon />}>
                 Apple
               </Button>
 
