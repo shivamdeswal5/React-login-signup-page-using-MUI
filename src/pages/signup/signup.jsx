@@ -62,8 +62,8 @@ export default function signup() {
             justifyContent:"center",
             alignItems: "center",
             gap:"6rem",
-            height:"100vh",
-            gridTemplateColumns: 'repeat(2, 1fr)'
+            height:"93.2vh",
+            gridTemplateColumns: 'repeat(2, 1fr)',
           }}
           
       >
@@ -150,11 +150,11 @@ export default function signup() {
               spacing={{ xs: 1, sm: 2, md: 4 }}>
 
               <Button variant="outlined" startIcon={<GoogleIcon />}>
-                Delete
+                Google
               </Button>
 
               <Button variant="outlined" startIcon={<AppleIcon />}>
-                Delete
+                Apple
               </Button>
 
             </Stack>

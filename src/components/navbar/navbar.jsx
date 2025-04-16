@@ -27,6 +27,7 @@ export default function Navbar() {
           </Typography>
           <Button color="inherit" href='/login'>Login</Button>
           <Button color="inherit" href='/signup'>Signup</Button>
+          <Button color="inherit" href='/'>Home</Button>
         </Toolbar>
       </AppBar>
     </Box>

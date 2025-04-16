@@ -48,15 +48,16 @@ export default function login() {
       console.log(getDetials);
       getDetials.map((curValue) => {
         console.log(curValue.password);
-        let uFirstName = curValue.firstName;
-        let uLastName = curValue.lastName;
-        let uEmail = curValue.email;
-        let uPassword = curValue.password;
+        let FirstName = curValue.firstName;
+        let LastName = curValue.lastName;
+        let Email = curValue.email;
+        let Password = curValue.password;
 
-        if (uEmail == email && uPassword == password) {
-          localStorage.setItem("currentUser", JSON.stringify({ uFirstName, uLastName, uEmail, uPassword }));
+        if (Email == email && Password == password) {
+          localStorage.setItem("currentUser", JSON.stringify({ FirstName, LastName, Email, Password }));
+          localStorage.setItem("isLogIn", true);
           alert("Login Successfully !");
-          navigate("/home");
+          navigate("/");
         } else {
           return setMsg("Invalid Email or Password!");
         }
@@ -76,7 +77,7 @@ export default function login() {
           justifyContent: "center",
           alignItems: "center",
           gap: "6rem",
-          height: "100vh"
+          height:"93.2vh",
         }}
 
       >

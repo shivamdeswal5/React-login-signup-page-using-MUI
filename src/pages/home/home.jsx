@@ -10,7 +10,7 @@ export default function home() {
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (currentUser && currentUser.uFirstName) {
-      setUserName(`${currentUser.uFirstName} ${currentUser.uLastName} `);
+      setUserName(`${currentUser.FirstName} ${currentUser.LastName} `);
     } else {
       navigate("/login");
     }
@@ -19,6 +19,7 @@ export default function home() {
   const handleLogout = () => {
 
     localStorage.removeItem("currentUser");
+    localStorage.removeItem("isLogIn");
     navigate("/login");
   };
 
