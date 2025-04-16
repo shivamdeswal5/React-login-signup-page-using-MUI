@@ -26,8 +26,8 @@ export default function Navbar() {
             MUI Login/Signup
           </Typography>
           <Button color="inherit" href='/login'>Login</Button>
-          <Button color="inherit" href='/signup'>Signup</Button>
-          <Button color="inherit" href='/'>Home</Button>
+          <Button color="inherit" href='/'>Signup</Button>
+          <Button color="inherit" href='/home'>Home</Button>
         </Toolbar>
       </AppBar>
     </Box>

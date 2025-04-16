@@ -57,7 +57,7 @@ export default function login() {
           localStorage.setItem("currentUser", JSON.stringify({ FirstName, LastName, Email, Password }));
           localStorage.setItem("isLogIn", true);
           alert("Login Successfully !");
-          navigate("/");
+          navigate("/home");
         } else {
           return setMsg("Invalid Email or Password!");
         }

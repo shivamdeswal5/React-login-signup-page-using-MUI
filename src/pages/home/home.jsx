@@ -7,14 +7,14 @@ export default function home() {
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (currentUser && currentUser.uFirstName) {
-      setUserName(`${currentUser.FirstName} ${currentUser.LastName} `);
-    } else {
-      navigate("/login");
-    }
-  }, [navigate]);
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  if (currentUser && currentUser.uFirstName) {
+    setUserName(`${currentUser.FirstName} ${currentUser.LastName} `);
+  } else {
+    navigate("/login");
+  }
+
 
   const handleLogout = () => {
 

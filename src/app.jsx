@@ -14,12 +14,10 @@ function App() {
       <Navbar/>
       <BrowserRouter>
         <Routes>
-          <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/' element={<Signup />} />
            {/* Protected Routes */}
-           <Route element ={<Protected/>}>
-            <Route path='/' element={<Home/>} />
-           </Route>
+            <Route path='/home' element={<Protected><Home/></Protected>} />
         </Routes>
       </BrowserRouter>
     </>
